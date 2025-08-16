@@ -1,5 +1,5 @@
 [build]
-  publish = ".next"
+  publish = "out"
   command = "npm run build"
 
 [build.environment]
@@ -9,6 +9,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[context.production.environment]
-  NEXT_PRIVATE_TARGET = "server"
