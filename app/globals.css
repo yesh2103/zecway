@@ -1053,34 +1053,128 @@ html {
   margin: 8px 16px;
 }
 
-@media (max-width: 768px) {
-  .elementor-nav-menu--desktop {
-    display: none;
-  }
+/* Adding mobile menu toggle and responsive navigation styles */
+.elementor-mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
 
-  .elementor-nav-menu--mobile {
+.elementor-mobile-menu-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.elementor-mobile-menu-closed {
+  display: none;
+}
+
+.elementor-mobile-menu-open {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Enhanced mobile responsive styles */
+@media (max-width: 768px) {
+  .elementor-mobile-menu-toggle {
     display: block;
   }
 
-  .text-celebrate {
-    font-size: 48px;
+  .elementor-widget-nav-menu {
+    display: none;
   }
 
-  .text-pride {
-    font-size: 32px;
+  .elementor-mobile-menu-open .elementor-nav-wrapper {
+    flex-direction: column;
+    padding: 20px;
   }
 
-  .text-24 {
-    font-size: 48px;
+  .elementor-mobile-menu-open .elementor-nav-menu-list {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .geometric-shape {
-    width: 60px !important;
-    height: 60px !important;
+  .elementor-mobile-menu-open .elementor-nav-menu-item {
+    margin: 0 0 10px 0;
+    width: 100%;
   }
 
-  .elementor-background-pattern {
-    height: 300px;
+  .elementor-mobile-menu-open .elementor-nav-link {
+    display: block;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  .elementor-mobile-menu-open .elementor-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .elementor-geometric-pattern {
+    transform: scale(0.7);
+    margin: 20px 0;
+  }
+
+  .elementor-heading-title {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .elementor-text-content {
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  .elementor-scrolling-text {
+    font-size: 14px;
+  }
+
+  .elementor-icon-box-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .elementor-image-box-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .elementor-footer-links {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .elementor-footer-links li {
+    margin: 5px 0;
+  }
+
+  .elementor-copyright {
+    text-align: center;
+  }
+}
+
+/* Additional responsive breakpoints for tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .elementor-geometric-pattern {
+    transform: scale(0.85);
+  }
+
+  .elementor-heading-title {
+    font-size: 2.5rem;
+  }
+
+  .elementor-text-content {
+    font-size: 1rem;
   }
 }
 
@@ -2042,4 +2136,71 @@ html {
   background: #333;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Landscape orientation styles for header visibility */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .elementor-header-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    padding: 8px 0;
+    min-height: 60px;
+    height: auto;
+  }
+
+  .elementor-logo-text {
+    font-size: 1.25rem;
+  }
+
+  .elementor-logo-suffix {
+    font-size: 1rem;
+  }
+
+  .elementor-nav-link {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+
+  .elementor-button-primary {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .elementor-hero-section {
+    padding-top: 80px;
+  }
+
+  .elementor-mobile-menu-toggle {
+    display: block;
+  }
+
+  .elementor-widget-nav-menu {
+    display: none;
+  }
+}
+
+/* Ensuring header stays visible on all screen sizes */
+@media screen and (max-height: 400px) {
+  .elementor-header-section {
+    padding: 4px 0;
+    min-height: 50px;
+  }
+
+  .elementor-logo-text {
+    font-size: 1.125rem;
+  }
+
+  .elementor-nav-link {
+    font-size: 13px;
+  }
+
+  .elementor-button-primary {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
 }

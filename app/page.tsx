@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, ChevronDown } from "lucide-react"
+import { ArrowRight, ChevronDown, Menu, X } from "lucide-react"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,7 +41,7 @@ export default function HomePage() {
       <section className="elementor-section elementor-header-section">
         <div className="elementor-container">
           <div className="elementor-row">
-            <div className="elementor-column elementor-col-50 elementor-logo-column">
+            <div className="elementor-column elementor-col-50 md:elementor-col-50 elementor-logo-column">
               <div className="elementor-widget elementor-widget-heading">
                 <div className="elementor-logo elementor-animation-slide-left">
                   <span className="elementor-logo-text">Schbang</span>
@@ -50,13 +50,19 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="elementor-column elementor-col-50 elementor-nav-column">
-              <div className="elementor-widget elementor-widget-nav-menu">
+            <div className="elementor-column elementor-col-50 md:elementor-col-50 elementor-nav-column">
+              <button className="elementor-mobile-menu-toggle md:hidden" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+
+              <div
+                className={`elementor-widget elementor-widget-nav-menu ${isMenuOpen ? "elementor-mobile-menu-open" : "elementor-mobile-menu-closed"} md:block`}
+              >
                 <nav className="elementor-nav-menu elementor-animation-slide-right">
                   <div className="elementor-nav-wrapper">
                     <ul className="elementor-nav-menu-list">
                       <li className="elementor-nav-menu-item">
-                        <a href="#work" className="elementor-nav-link">
+                        <a href="#work" className="elementor-nav-link" onClick={() => setIsMenuOpen(false)}>
                           Work
                         </a>
                       </li>
@@ -91,7 +97,7 @@ export default function HomePage() {
                       ))}
 
                       <li className="elementor-nav-menu-item">
-                        <a href="#careers" className="elementor-nav-link">
+                        <a href="#careers" className="elementor-nav-link" onClick={() => setIsMenuOpen(false)}>
                           Careers
                         </a>
                       </li>
@@ -113,18 +119,20 @@ export default function HomePage() {
           <div className="elementor-row">
             <div className="elementor-column elementor-col-100">
               <div className="elementor-widget elementor-widget-heading elementor-invisible">
-                <h1 className="elementor-heading-title">Your Creative, Media & Technology Transformation Partner</h1>
+                <h1 className="elementor-heading-title text-2xl md:text-4xl lg:text-5xl">
+                  Your Creative, Media & Technology Transformation Partner
+                </h1>
               </div>
 
               <div className="elementor-widget elementor-widget-text-editor elementor-invisible">
-                <p className="elementor-text-content">
+                <p className="elementor-text-content text-sm md:text-base lg:text-lg">
                   We're a team of 1000+ Specialists delivering award-winning work for 300+ brands worldwide. 8 years and
                   counting!
                 </p>
               </div>
 
               <div className="elementor-widget elementor-widget-image elementor-invisible">
-                <div className="elementor-geometric-pattern">
+                <div className="elementor-geometric-pattern scale-75 md:scale-100">
                   <div className="elementor-shape elementor-shape-1 elementor-animation-float-1"></div>
                   <div className="elementor-shape elementor-shape-2 elementor-animation-float-2"></div>
                   <div className="elementor-shape elementor-shape-3 elementor-animation-float-3"></div>
@@ -148,7 +156,7 @@ export default function HomePage() {
 
         <div className="elementor-widget elementor-widget-text-marquee">
           <div className="elementor-scrolling-banner">
-            <div className="elementor-scrolling-text">
+            <div className="elementor-scrolling-text text-sm md:text-base lg:text-lg">
               IT'S TIME TO CREATE A SCHBANG • IT'S TIME TO CREATE A SCHBANG • IT'S TIME TO CREATE A SCHBANG • IT'S TIME
               TO CREATE A SCHBANG •
             </div>
@@ -161,11 +169,11 @@ export default function HomePage() {
           <div className="elementor-row">
             <div className="elementor-column elementor-col-100">
               <div className="elementor-widget elementor-widget-heading elementor-invisible">
-                <h2 className="elementor-heading-title">What defines us</h2>
+                <h2 className="elementor-heading-title text-xl md:text-2xl lg:text-3xl">What defines us</h2>
               </div>
 
               <div className="elementor-widget elementor-widget-text-editor elementor-invisible">
-                <p className="elementor-text-content">
+                <p className="elementor-text-content text-sm md:text-base">
                   We're not just another agency. We're transformation partners who blend creativity, technology, and
                   strategic thinking.
                 </p>
@@ -191,15 +199,15 @@ export default function HomePage() {
                 desc: "We partner with you to develop strategies that align with your business goals.",
               },
             ].map((item, index) => (
-              <div key={index} className="elementor-column elementor-col-33">
+              <div key={index} className="elementor-column elementor-col-100 md:elementor-col-33">
                 <div className="elementor-widget elementor-widget-icon-box elementor-invisible">
                   <div className="elementor-icon-box-wrapper">
                     <div className="elementor-icon-box-icon">
                       <span className="elementor-icon">{item.icon}</span>
                     </div>
                     <div className="elementor-icon-box-content">
-                      <h3 className="elementor-icon-box-title">{item.title}</h3>
-                      <p className="elementor-icon-box-description">{item.desc}</p>
+                      <h3 className="elementor-icon-box-title text-lg md:text-xl">{item.title}</h3>
+                      <p className="elementor-icon-box-description text-sm md:text-base">{item.desc}</p>
                     </div>
                   </div>
                 </div>
@@ -224,11 +232,11 @@ export default function HomePage() {
           <div className="elementor-row">
             <div className="elementor-column elementor-col-100">
               <div className="elementor-widget elementor-widget-heading elementor-invisible">
-                <h2 className="elementor-heading-title">Featured Work</h2>
+                <h2 className="elementor-heading-title text-xl md:text-2xl lg:text-3xl">Featured Work</h2>
               </div>
 
               <div className="elementor-widget elementor-widget-text-editor elementor-invisible">
-                <p className="elementor-text-content">
+                <p className="elementor-text-content text-sm md:text-base">
                   Discover how we've helped brands transform their digital presence and achieve remarkable results.
                 </p>
               </div>
@@ -237,7 +245,7 @@ export default function HomePage() {
 
           <div className="elementor-row">
             {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div key={item} className="elementor-column elementor-col-33">
+              <div key={item} className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-33">
                 <div className="elementor-widget elementor-widget-image-box elementor-invisible">
                   <div className="elementor-image-box-wrapper">
                     <div className="elementor-image-box-img">
@@ -253,8 +261,8 @@ export default function HomePage() {
                       </div>
                     </div>
                     <div className="elementor-image-box-content">
-                      <h3 className="elementor-image-box-title">Creative Project {item}</h3>
-                      <p className="elementor-image-box-description">
+                      <h3 className="elementor-image-box-title text-base md:text-lg">Creative Project {item}</h3>
+                      <p className="elementor-image-box-description text-sm md:text-base">
                         Brand transformation campaign with innovative digital solutions.
                       </p>
                     </div>
@@ -269,7 +277,7 @@ export default function HomePage() {
       <section className="elementor-section elementor-footer-section">
         <div className="elementor-container">
           <div className="elementor-row">
-            <div className="elementor-column elementor-col-25">
+            <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
               <div className="elementor-widget elementor-widget-heading">
                 <h3 className="elementor-heading-title">Schbang</h3>
               </div>
@@ -283,7 +291,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="elementor-column elementor-col-25">
+            <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
               <div className="elementor-widget elementor-widget-nav-menu">
                 <h4 className="elementor-widget-title">Services</h4>
                 <ul className="elementor-nav-menu-list">
@@ -311,7 +319,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="elementor-column elementor-col-25">
+            <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
               <div className="elementor-widget elementor-widget-nav-menu">
                 <h4 className="elementor-widget-title">Company</h4>
                 <ul className="elementor-nav-menu-list">
@@ -339,7 +347,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="elementor-column elementor-col-25">
+            <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
               <div className="elementor-widget elementor-widget-text-editor">
                 <h4 className="elementor-widget-title">Contact</h4>
                 <div className="elementor-contact-info">
@@ -352,12 +360,12 @@ export default function HomePage() {
           </div>
 
           <div className="elementor-row elementor-footer-bottom">
-            <div className="elementor-column elementor-col-50">
+            <div className="elementor-column elementor-col-100 md:elementor-col-50">
               <div className="elementor-widget elementor-widget-text-editor">
                 <p className="elementor-copyright">© 2024 Schbang. All rights reserved.</p>
               </div>
             </div>
-            <div className="elementor-column elementor-col-50">
+            <div className="elementor-column elementor-col-100 md:elementor-col-50">
               <div className="elementor-widget elementor-widget-nav-menu">
                 <ul className="elementor-footer-links">
                   <li>
