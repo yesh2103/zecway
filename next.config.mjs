@@ -9,22 +9,18 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Enable static export for Netlify
-  output: 'export',
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true,
-  // Fix cross-origin dev server issues (dev only)
-  ...(process.env.NODE_ENV === 'development' && {
-    allowedDevOrigins: [
-      'impure-pocket-watch.net',
-      'dead-curl.com', 
-      'apt-executor.info',
-      'incomparable-guard.name'
-    ],
-    experimental: {
-      webpackBuildWorker: true,
-    },
-  }),
+  // Fix cross-origin dev server issues
+  allowedDevOrigins: [
+    'impure-pocket-watch.net',
+    'dead-curl.com', 
+    'apt-executor.info',
+    'incomparable-guard.name',
+    '98f39229996b45199615ff98912efd50-1d45e326677546d9aedea4be9.fly.dev'
+  ],
+  // Improve dev server stability
+  experimental: {
+    webpackBuildWorker: true,
+  },
   // Ensure proper asset handling
   assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
 }
