@@ -148,75 +148,70 @@ export default function HomePage() {
         </div>
       </header>
 
-      <main className="elementor-main-content">
-        <section className="elementor-section elementor-hero-section">
-          <div className="elementor-container">
-            <div className="elementor-row">
-              <div className="elementor-column elementor-col-100">
-                <div className="elementor-widget elementor-widget-heading elementor-invisible">
-                  <h1 className="elementor-heading-title text-2xl md:text-4xl lg:text-5xl">
-                    Your Creative, Media & Technology Transformation Partner
-                  </h1>
+      <main className="pt-16">
+        <section className="hero-section min-h-screen flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden">
+          <div className="container mx-auto text-center relative z-10">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-black mb-6 leading-tight">
+              Your Creative, Media & Technology Transformation Partner
+            </h1>
+
+            <p className="text-lg md:text-xl lg:text-2xl text-gray-700 mb-12 max-w-4xl mx-auto">
+              We're a team of 1000+ Specialists delivering award-winning work for 300+ brands worldwide, 8 years and counting!
+            </p>
+
+            <div className="geometric-pattern-container w-full max-w-6xl mx-auto h-64 md:h-96 lg:h-[500px] relative mb-8">
+              <div className="geometric-pattern w-full h-full relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-pink-500 via-blue-500 via-cyan-500 via-green-500 via-orange-500 via-yellow-500 to-purple-500 rounded-2xl transform -skew-x-12 opacity-90"></div>
+
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white z-10">
+                  <div className="text-6xl md:text-8xl lg:text-9xl font-black mb-4 transform -rotate-12">celebrate</div>
+                  <div className="text-4xl md:text-6xl lg:text-7xl font-black">24</div>
                 </div>
 
-                <div className="elementor-widget elementor-widget-text-editor elementor-invisible">
-                  <p className="elementor-text-content text-sm md:text-base lg:text-lg">
-                    We're a team of 1000+ Specialists delivering award-winning work for 300+ brands worldwide. 8 years
-                    and counting!
-                  </p>
+                <div className="absolute top-4 right-8 text-white font-bold text-lg md:text-xl transform rotate-12">
+                  PRIDE
+                  <div className="text-sm">04 august</div>
                 </div>
 
-                <div className="elementor-widget elementor-widget-image elementor-invisible">
-                  <div className="elementor-geometric-pattern scale-75 md:scale-100">
-                    <div className="elementor-shape elementor-shape-1 elementor-animation-float-1"></div>
-                    <div className="elementor-shape elementor-shape-2 elementor-animation-float-2"></div>
-                    <div className="elementor-shape elementor-shape-3 elementor-animation-float-3"></div>
-                    <div className="elementor-shape elementor-shape-4 elementor-animation-float-4"></div>
-                    <div className="elementor-shape elementor-shape-5 elementor-animation-float-5"></div>
-                    <div className="elementor-shape elementor-shape-6 elementor-animation-float-6"></div>
-                    <div className="elementor-shape elementor-shape-7 elementor-animation-float-7"></div>
+                <div className="absolute bottom-8 left-8 text-white font-bold text-lg md:text-xl transform -rotate-12">
+                  july
+                </div>
 
-                    <div className="elementor-text-overlay elementor-text-1 elementor-animation-glow">celebrate</div>
-                    <div className="elementor-text-overlay elementor-text-2 elementor-animation-pulse">PRIDE</div>
-                    <div className="elementor-text-overlay elementor-text-3 elementor-animation-bounce">24</div>
-                    <div className="elementor-text-overlay elementor-text-4 elementor-animation-glow">04 august</div>
-                    <div className="elementor-text-overlay elementor-text-5 elementor-animation-pulse">PRIDE</div>
-                    <div className="elementor-text-overlay elementor-text-6 elementor-animation-glow">msterd</div>
-                    <div className="elementor-text-overlay elementor-text-7 elementor-animation-bounce">july</div>
-                  </div>
+                <div className="absolute top-8 left-1/3 text-white font-bold text-base md:text-lg transform rotate-6">
+                  msterd
+                </div>
+
+                <div className="absolute bottom-4 right-1/3 text-white font-bold text-xl md:text-2xl transform rotate-12">
+                  PRIDE
                 </div>
               </div>
             </div>
           </div>
 
-          <div className="elementor-widget elementor-widget-text-marquee">
-            <div className="elementor-scrolling-banner">
-              <div className="elementor-scrolling-text text-sm md:text-base lg:text-lg">
-                IT'S TIME TO CREATE A SCHBANG • IT'S TIME TO CREATE A SCHBANG • IT'S TIME TO CREATE A SCHBANG • IT'S
-                TIME TO CREATE A SCHBANG •
-              </div>
+          <div className="w-full bg-black text-white py-3 overflow-hidden">
+            <div className="animate-marquee whitespace-nowrap">
+              <span className="text-sm md:text-base font-semibold mx-8">IT'S TIME TO CREATE A SCHBANG</span>
+              <span className="text-sm md:text-base font-semibold mx-8">•</span>
+              <span className="text-sm md:text-base font-semibold mx-8">IT'S TIME TO CREATE A SCHBANG</span>
+              <span className="text-sm md:text-base font-semibold mx-8">•</span>
+              <span className="text-sm md:text-base font-semibold mx-8">IT'S TIME TO CREATE A SCHBANG</span>
+              <span className="text-sm md:text-base font-semibold mx-8">•</span>
+              <span className="text-sm md:text-base font-semibold mx-8">IT'S TIME TO CREATE A SCHBANG</span>
+              <span className="text-sm md:text-base font-semibold mx-8">•</span>
             </div>
           </div>
         </section>
 
-        <section className="elementor-section elementor-about-section">
-          <div className="elementor-container">
-            <div className="elementor-row">
-              <div className="elementor-column elementor-col-100">
-                <div className="elementor-widget elementor-widget-heading elementor-invisible">
-                  <h2 className="elementor-heading-title text-xl md:text-2xl lg:text-3xl">What defines us</h2>
-                </div>
-
-                <div className="elementor-widget elementor-widget-text-editor elementor-invisible">
-                  <p className="elementor-text-content text-sm md:text-base">
-                    We're not just another agency. We're transformation partners who blend creativity, technology, and
-                    strategic thinking.
-                  </p>
-                </div>
-              </div>
+        <section className="py-20 bg-gray-50">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">What defines us</h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                We're not just another agency. We're transformation partners who blend creativity, technology, and strategic thinking.
+              </p>
             </div>
 
-            <div className="elementor-row">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {[
                 {
                   icon: "🎨",
@@ -234,30 +229,18 @@ export default function HomePage() {
                   desc: "We partner with you to develop strategies that align with your business goals.",
                 },
               ].map((item, index) => (
-                <div key={index} className="elementor-column elementor-col-100 md:elementor-col-33">
-                  <div className="elementor-widget elementor-widget-icon-box elementor-invisible">
-                    <div className="elementor-icon-box-wrapper">
-                      <div className="elementor-icon-box-icon">
-                        <span className="elementor-icon">{item.icon}</span>
-                      </div>
-                      <div className="elementor-icon-box-content">
-                        <h3 className="elementor-icon-box-title text-lg md:text-xl">{item.title}</h3>
-                        <p className="elementor-icon-box-description text-sm md:text-base">{item.desc}</p>
-                      </div>
-                    </div>
-                  </div>
+                <div key={index} className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow">
+                  <div className="text-4xl md:text-5xl mb-6">{item.icon}</div>
+                  <h3 className="text-xl md:text-2xl font-bold mb-4">{item.title}</h3>
+                  <p className="text-gray-600">{item.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="elementor-row">
-              <div className="elementor-column elementor-col-100">
-                <div className="elementor-widget elementor-widget-button elementor-invisible">
-                  <Button className="elementor-button elementor-button-secondary">
-                    Dive into Our Culture <ArrowRight className="ml-2" size={20} />
-                  </Button>
-                </div>
-              </div>
+            <div className="text-center">
+              <Button className="bg-white text-black border border-gray-300 hover:bg-gray-50 px-8 py-3 rounded-full flex items-center mx-auto">
+                Dive into Our Culture <ArrowRight className="ml-2" size={20} />
+              </Button>
             </div>
           </div>
         </section>
