@@ -245,46 +245,35 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="work" className="elementor-section elementor-work-section">
-          <div className="elementor-container">
-            <div className="elementor-row">
-              <div className="elementor-column elementor-col-100">
-                <div className="elementor-widget elementor-widget-heading elementor-invisible">
-                  <h2 className="elementor-heading-title text-xl md:text-2xl lg:text-3xl">Featured Work</h2>
-                </div>
-
-                <div className="elementor-widget elementor-widget-text-editor elementor-invisible">
-                  <p className="elementor-text-content text-sm md:text-base">
-                    Discover how we've helped brands transform their digital presence and achieve remarkable results.
-                  </p>
-                </div>
-              </div>
+        <section id="work" className="py-20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-black mb-6">Featured Work</h2>
+              <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover how we've helped brands transform their digital presence and achieve remarkable results.
+              </p>
             </div>
 
-            <div className="elementor-row">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3, 4, 5, 6].map((item) => (
-                <div key={item} className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-33">
-                  <div className="elementor-widget elementor-widget-image-box elementor-invisible">
-                    <div className="elementor-image-box-wrapper">
-                      <div className="elementor-image-box-img">
-                        <img
-                          src={`/colorful-creative-project.png?height=300&width=400&query=colorful creative project ${item}`}
-                          alt={`Project ${item}`}
-                          className="elementor-image"
-                        />
-                        <div className="elementor-image-overlay">
-                          <Button className="elementor-overlay-button">
-                            View Project <ArrowRight className="ml-2" size={16} />
-                          </Button>
-                        </div>
-                      </div>
-                      <div className="elementor-image-box-content">
-                        <h3 className="elementor-image-box-title text-base md:text-lg">Creative Project {item}</h3>
-                        <p className="elementor-image-box-description text-sm md:text-base">
-                          Brand transformation campaign with innovative digital solutions.
-                        </p>
-                      </div>
+                <div key={item} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+                  <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden">
+                    <img
+                      src={`https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&h=300&fit=crop&crop=center&q=80&fm=jpg&dpr=2&auto=format&s=${item}`}
+                      alt={`Project ${item}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <Button className="bg-white text-black hover:bg-gray-100 px-6 py-2 rounded-full">
+                        View Project <ArrowRight className="ml-2" size={16} />
+                      </Button>
                     </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3">Creative Project {item}</h3>
+                    <p className="text-gray-600">
+                      Brand transformation campaign with innovative digital solutions.
+                    </p>
                   </div>
                 </div>
               ))}
@@ -292,116 +281,58 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="elementor-section elementor-footer-section">
-          <div className="elementor-container">
-            <div className="elementor-row">
-              <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
-                <div className="elementor-widget elementor-widget-heading">
-                  <h3 className="elementor-heading-title">Schbang</h3>
-                </div>
-                <div className="elementor-widget elementor-widget-text-editor">
-                  <p className="elementor-text-content">Your Creative, Media & Technology Transformation Partner</p>
-                </div>
-                <div className="elementor-widget elementor-widget-button">
-                  <Button className="elementor-button elementor-button-light">
-                    Contact Us <ArrowRight className="ml-2" size={16} />
-                  </Button>
-                </div>
+        <footer className="bg-gray-900 text-white py-16">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              <div className="space-y-4">
+                <h3 className="text-2xl font-bold">Schbang</h3>
+                <p className="text-gray-300">
+                  Your Creative, Media & Technology Transformation Partner
+                </p>
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full flex items-center w-fit">
+                  Contact Us <ArrowRight className="ml-2" size={16} />
+                </Button>
               </div>
 
-              <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
-                <div className="elementor-widget elementor-widget-nav-menu">
-                  <h4 className="elementor-widget-title">Services</h4>
-                  <ul className="elementor-nav-menu-list">
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Creative & Branding
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Digital Marketing
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Technology Solutions
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Media Planning
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Services</h4>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Creative & Branding</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Digital Marketing</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Technology Solutions</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Media Planning</a></li>
+                </ul>
               </div>
 
-              <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
-                <div className="elementor-widget elementor-widget-nav-menu">
-                  <h4 className="elementor-widget-title">Company</h4>
-                  <ul className="elementor-nav-menu-list">
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Careers
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Culture
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        News
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Company</h4>
+                <ul className="space-y-2">
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Careers</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">Culture</a></li>
+                  <li><a href="#" className="text-gray-300 hover:text-white transition-colors">News</a></li>
+                </ul>
               </div>
 
-              <div className="elementor-column elementor-col-100 md:elementor-col-50 lg:elementor-col-25">
-                <div className="elementor-widget elementor-widget-text-editor">
-                  <h4 className="elementor-widget-title">Contact</h4>
-                  <div className="elementor-contact-info">
-                    <p>Mumbai, India</p>
-                    <p>hello@schbang.com</p>
-                    <p>+91 98765 43210</p>
-                  </div>
+              <div>
+                <h4 className="text-lg font-semibold mb-4">Contact</h4>
+                <div className="space-y-2 text-gray-300">
+                  <p>Mumbai, India</p>
+                  <p>hello@schbang.com</p>
+                  <p>+91 98765 43210</p>
                 </div>
               </div>
             </div>
 
-            <div className="elementor-row elementor-footer-bottom">
-              <div className="elementor-column elementor-col-100 md:elementor-col-50">
-                <div className="elementor-widget elementor-widget-text-editor">
-                  <p className="elementor-copyright">© 2024 Schbang. All rights reserved.</p>
-                </div>
-              </div>
-              <div className="elementor-column elementor-col-100 md:elementor-col-50">
-                <div className="elementor-widget elementor-widget-nav-menu">
-                  <ul className="elementor-footer-links">
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Privacy Policy
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" className="elementor-nav-link">
-                        Terms of Service
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+            <div className="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center">
+              <p className="text-gray-400 text-sm mb-4 md:mb-0">© 2024 Schbang. All rights reserved.</p>
+              <div className="flex space-x-6">
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>
-        </section>
+        </footer>
       </main>
     </div>
   )
