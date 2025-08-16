@@ -38,83 +38,113 @@ export default function HomePage() {
 
   return (
     <div className="elementor-page">
-      <header className="elementor-section elementor-header-section">
-        <div className="elementor-container">
-          <div className="elementor-row elementor-header-row">
-            <div className="elementor-column elementor-col-50 elementor-logo-column">
-              <div className="elementor-widget elementor-widget-heading">
-                <div className="elementor-logo elementor-animation-slide-left">
-                  <span className="elementor-logo-text">Schbang</span>
-                  <span className="elementor-logo-suffix">.Production</span>
-                </div>
-              </div>
+      <header className="schbang-header sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="schbang-logo">
+              <span className="text-xl font-bold text-black">Schbang</span>
+              <span className="text-sm text-gray-600">.Talent Management</span>
             </div>
 
-            <div className="elementor-column elementor-col-50 elementor-nav-column">
-              <div className="elementor-nav-container">
-                <button
-                  className="elementor-mobile-menu-toggle md:hidden"
-                  onClick={() => setIsMenuOpen(!isMenuOpen)}
-                  aria-label="Toggle mobile menu"
-                >
-                  {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+            <div className="hidden md:flex items-center space-x-8">
+              <nav className="flex items-center space-x-6">
+                <a href="#work" className="nav-link text-gray-700 hover:text-black transition-colors">
+                  Work
+                </a>
 
-                <div
-                  className={`elementor-widget elementor-widget-nav-menu ${isMenuOpen ? "elementor-mobile-menu-open" : ""}`}
-                >
-                  <nav className="elementor-nav-menu elementor-animation-slide-right">
-                    <ul className="elementor-nav-menu-list">
-                      <li className="elementor-nav-menu-item">
-                        <a href="#work" className="elementor-nav-link" onClick={() => setIsMenuOpen(false)}>
-                          Work
-                        </a>
-                      </li>
+                {Object.entries(dropdownData).map(([key, items]) => (
+                  <div
+                    key={key}
+                    className="relative nav-dropdown-container"
+                    onMouseEnter={() => setActiveDropdown(key)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
+                    <button className="nav-link text-gray-700 hover:text-black transition-colors flex items-center">
+                      {key}
+                      <ChevronDown
+                        size={16}
+                        className={`ml-1 transition-transform ${activeDropdown === key ? "rotate-180" : ""}`}
+                      />
+                    </button>
 
-                      {Object.entries(dropdownData).map(([key, items]) => (
-                        <li
-                          key={key}
-                          className="elementor-nav-menu-item elementor-has-dropdown"
-                          onMouseEnter={() => setActiveDropdown(key)}
-                          onMouseLeave={() => setActiveDropdown(null)}
-                        >
-                          <a href="#" className="elementor-nav-link">
-                            {key}
-                            <ChevronDown
-                              size={16}
-                              className={`elementor-dropdown-icon ${activeDropdown === key ? "elementor-rotate-180" : ""}`}
-                            />
+                    {activeDropdown === key && (
+                      <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg border border-gray-100 py-2 z-50">
+                        {items.map((item, index) => (
+                          <a
+                            key={index}
+                            href="#"
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-black transition-colors"
+                          >
+                            {item}
                           </a>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ))}
 
-                          {activeDropdown === key && (
-                            <ul className="elementor-dropdown-menu elementor-animation-fade-in">
-                              {items.map((item, index) => (
-                                <li key={index} className="elementor-dropdown-item">
-                                  <a href="#" className="elementor-dropdown-link">
-                                    {item}
-                                  </a>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                        </li>
-                      ))}
+                <a href="#careers" className="nav-link text-gray-700 hover:text-black transition-colors">
+                  Careers
+                </a>
+              </nav>
 
-                      <li className="elementor-nav-menu-item">
-                        <a href="#careers" className="elementor-nav-link" onClick={() => setIsMenuOpen(false)}>
-                          Careers
-                        </a>
-                      </li>
-                    </ul>
-
-                    <Button className="elementor-button elementor-button-primary elementor-animation-hover">
-                      Contact us
-                    </Button>
-                  </nav>
-                </div>
-              </div>
+              <Button className="bg-black text-white hover:bg-gray-800 px-6 py-2 rounded-full flex items-center">
+                Contact Us
+                <ArrowRight className="ml-2" size={16} />
+              </Button>
             </div>
+
+            <button
+              className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle mobile menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
           </div>
+
+          {isMenuOpen && (
+            <div className="md:hidden border-t border-gray-100 py-4 space-y-4">
+              <nav className="space-y-2">
+                <a
+                  href="#work"
+                  className="block py-2 text-gray-700 hover:text-black transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Work
+                </a>
+
+                {Object.entries(dropdownData).map(([key, items]) => (
+                  <div key={key} className="space-y-1">
+                    <div className="block py-2 text-gray-700 font-medium">{key}</div>
+                    <div className="pl-4 space-y-1">
+                      {items.map((item, index) => (
+                        <a
+                          key={index}
+                          href="#"
+                          className="block py-1 text-sm text-gray-600 hover:text-black transition-colors"
+                        >
+                          {item}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+
+                <a
+                  href="#careers"
+                  className="block py-2 text-gray-700 hover:text-black transition-colors"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Careers
+                </a>
+              </nav>
+
+              <Button className="w-full bg-black text-white hover:bg-gray-800 py-3 rounded-full">
+                Contact Us
+              </Button>
+            </div>
+          )}
         </div>
       </header>
 
