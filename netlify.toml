@@ -1,9 +1,10 @@
 [build]
-  publish = "out"
+  publish = ".next"
   command = "npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "/*"
@@ -12,3 +13,12 @@
 
 [context.production.environment]
   NODE_ENV = "production"
+
+# Handle Next.js routing
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
