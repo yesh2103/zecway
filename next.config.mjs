@@ -9,10 +9,12 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Enable static export for Netlify deployment
-  output: 'export',
-  trailingSlash: true,
-  skipTrailingSlashRedirect: true,
+  // Enable static export for production builds
+  ...(process.env.NODE_ENV === 'production' && {
+    output: 'export',
+    trailingSlash: true,
+    skipTrailingSlashRedirect: true,
+  }),
   // Fix cross-origin dev server issues (dev only)
   ...(process.env.NODE_ENV === 'development' && {
     allowedDevOrigins: [
@@ -26,8 +28,6 @@ const nextConfig = {
       webpackBuildWorker: true,
     },
   }),
-  // Ensure proper asset handling
-  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : '',
 }
 
 export default nextConfig
